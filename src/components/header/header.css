@@ -1,0 +1,14 @@
+.main-heading {
+    width: fit-content;
+    margin: 0 0 32px;
+    font-size: 32px;
+    background-image: linear-gradient(
+            to right,
+            #5f93f9,
+            #ed54fe,
+            #fe649d,
+            #feae54
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

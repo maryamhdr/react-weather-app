@@ -1,0 +1,38 @@
+.weather-result-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.city-info-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.row-container {
+    width: 50%;
+}
+
+.current-card {
+    background: radial-gradient(circle at 0% 0.5%, #92b5ff 0.1%, #6497ff 100.2%);
+}
+
+.current-card .forecast-day,
+.current-card .forecast-temp,
+.current-card .lower-temp {
+    color: #fff;
+}
+
+@media all and (max-width: 595px) {
+    .city-info-container {
+        flex-flow: column nowrap;
+    }
+
+    .row-container {
+        width: 100%;
+    }
+}
