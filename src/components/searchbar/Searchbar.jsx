@@ -1,7 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 import "./searchbar.css";
 
-const Searchbar = () => {
+const Searchbar = ({onDataReady}) => {
+    const [city, setCity] = useState("New York");
+    const apiKey = '99b8f9330a1bfba3a85e523fd3c2e528';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    useEffect(() => {
+        axios.get(apiUrl).then((response) => {
+            if(onDataReady) {
+                onDataReady(response.data);
+            }
+        })
+    }, []);
+
     return (
         <form className="flex-container">
             <div className="search-input-container">
