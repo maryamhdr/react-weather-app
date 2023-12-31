@@ -19,7 +19,7 @@ export default function App() {
             iconUrl: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
             description: data.weather[0].description,
             temperature: Math.round(data.main.temp),
-            date: new Date()
+            date: new Date(data.dt * 1000)
         })
     }
 
