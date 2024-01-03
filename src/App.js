@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 
 export default function App() {
     const [weatherData, setWeatherData] = useState({isDataReady: false});
+    const [showForecas, setShowForecast] = useState(false);
 
     const onDataReady = (data) => {
         setWeatherData({
@@ -30,7 +31,7 @@ export default function App() {
                 <Searchbar onDataReady={onDataReady}/>
                 {weatherData.isDataReady && <>
                     <WeatherDataView weatherData={weatherData}/>
-                    {/*<ForecastList/>*/}
+                    {showForecas && <ForecastList/>}
                 </>}
                 {!weatherData.isDataReady && <EmptyState/>}
                 <Footer/>
