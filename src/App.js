@@ -16,7 +16,7 @@ export default function App() {
             humidity: data.main.humidity,
             city: data.name,
             country: data.sys.country,
-            iconUrl: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+            icon: data.weather[0].icon,
             description: data.weather[0].description,
             temperature: Math.round(data.main.temp),
             date: new Date(data.dt * 1000)

@@ -10,18 +10,12 @@
     color: #fff;
 }
 
-.current-weather-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 16px;
-}
-
 .current-temp-wrapper {
     position: relative;
     width: 100%;
     text-align: left;
     font-size: 34px;
-    margin-bottom: 16px;
+    margin: 16px 0;
     color: #fff;
 }
 
