@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import "./currentWeatherCard.css";
 import ReactAnimatedWeather from "react-animated-weather";
 
 const CurrentWeatherCard = ({weatherData}) => {
+    const [unit, setUnit] = useState("C");
+    const [temperature, setTemperature] = useState(weatherData.temperature);
     const weatherIconMapping = {
         "01d": "CLEAR_DAY",
         "01n": "CLEAR_NIGHT",
@@ -34,6 +36,19 @@ const CurrentWeatherCard = ({weatherData}) => {
         minutes = `0${minutes}`;
     }
 
+    const convertTemperature = () => {
+        let newTemp;
+        if (unit === 'C') {
+            newTemp = (temperature * 9 / 5) + 32;
+            setUnit('F');
+        } else {
+            newTemp = (temperature - 32) * 5 / 9;
+            setUnit('C');
+        }
+
+        setTemperature(Math.round(newTemp));
+    }
+
     return (
         <div className="current-weather-card">
             <ReactAnimatedWeather icon={weatherIconMapping[weatherData.icon]}
@@ -42,8 +57,16 @@ const CurrentWeatherCard = ({weatherData}) => {
                                   animate={true}/>
             <div className="current-temp-wrapper">
                 <span className="current-temp">
-                    <span>{weatherData.temperature}° </span>
-                    <button className="temp-unit" title="Change unit">C</button>
+                    <span>{temperature}° </span>
+                    <button className="temp-unit"
+                            title="Convert to celsius"
+                            onClick={convertTemperature}
+                            disabled={unit === 'C'}>C</button>
+                    <span className="temp-unit-separator">|</span>
+                    <button className="temp-unit fahrenheit"
+                            title="Convert fahrenheit"
+                            onClick={convertTemperature}
+                            disabled={unit === 'F'}>F</button>
                 </span>
                 <span className="current-weather-desc">, {weatherData.description}</span>
             </div>

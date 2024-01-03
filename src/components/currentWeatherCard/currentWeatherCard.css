@@ -21,7 +21,7 @@
 
 .current-temp-wrapper .current-temp {
     position: relative;
-    margin-right: 16px;
+    margin-right: 48px;
     font-size: 32px;
     color: #fff;
 }
@@ -38,13 +38,25 @@
     right: -18px;
     font-size: 24px;
     background-color: transparent;
-    cursor: pointer;
     border: none;
     color: #fff;
 }
 
-.current-temp-wrapper .temp-unit:hover {
+.current-temp-wrapper .temp-unit.fahrenheit {
+    right: -50px;
+}
+
+.current-temp-wrapper .temp-unit-separator {
+    position: absolute;
+    top: 0;
+    right: -25px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.current-temp-wrapper .temp-unit:not([disabled]):hover {
     color: #0000ac;
+    cursor: pointer;
 }
 
 .current-date-time {
