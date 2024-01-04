@@ -24,11 +24,7 @@
 .forecast-card .forecast-temp {
     display: flex;
     gap: 8px;
-}
-
-.forecast-icon {
-    width: 50%;
-    margin-bottom: 12px;
+    margin-top: 16px;
 }
 
 .forecast-day {

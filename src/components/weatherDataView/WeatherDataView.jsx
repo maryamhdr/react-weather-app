@@ -1,5 +1,5 @@
 import React from "react";
-import "./weatherForecastView.css";
+import "./weatherDataView.css";
 import CurrentWeatherCard from "../currentWeatherCard/CurrentWeatherCard";
 import CurrentWindBox from "../currentWindBox/CurrentWindBox";
 import CurrentHumidityBox from "../currentHumidityBox/CurrentHumidityBox";
